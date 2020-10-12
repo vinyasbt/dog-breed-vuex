@@ -1,18 +1,135 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div >
+    <Header />
+    <Search  />
+    <div class="aside">
+      <h2 class="title"><i>Dog Breeds</i></h2>
+    <ul v-for="(dog,index) in $store.state.dogsList" :key="index">
+      <a href="" @click.prevent="dogInfo(dog)">{{dog}}
+        <img :src="$store.state.dogRandomImage[index]" class="asidephoto" />
+      </a>
+      
+    </ul>
+    
+    </div>
+    <table class="col-md-10">
+      <div v-if="subBreed.length>0">
+           <br /> <label class="label">please select sub breed of {{dogName}}</label>
+            <select v-model="subBreedName">
+            <option v-for="(subdog,index) in subBreed" :key="index">{{subdog}}</option>
+        </select>
+        </div>
+      <tr v-for="(image,index) in $store.state.homeDogImages" :key="index" class="grid">
+        
+        <img :src="image" class="dogimage"/>
+        
+      </tr>
+    </table>
+    <Footer />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-
+import Search from "../views/Search.vue";
+import Header from "../components/Header.vue"
+import Footer from "../components/Footer.vue"
 export default {
   name: "Home",
+  data(){
+    return{
+      subBreed:[],
+      subBreedName:'',
+      dogName:''
+    }
+  },
+  created(){
+    this.$store.dispatch('getHomeDogRandomImage');
+    this.$store.dispatch('getAllDogsList');
+    
+  },
   components: {
-    HelloWorld
+    Search,
+    Header,
+    Footer
+  },
+  methods:{
+    dogInfo(data){
+      
+      this.dogName=data;
+      if(this.$store.state.dogobject[data].length>0)
+            {
+                this.subBreed=this.$store.state.dogobject[data];
+                
+            }
+            else{
+              this.$router.push({name:'About',params:{name:data}})
+            }
+    }
+    
+  },
+  watch:{
+    subBreedName(){
+      this.$router.push({name:'About',params:{name:this.dogName,subbreedname:this.subBreedName}})
+    },
+    
   }
+  
 };
 </script>
+<style scoped>
+
+
+.aside{
+  margin-left: 10px;
+  width: 20%;
+  background-color:black
+}
+.list{
+  width: 25%
+}
+.grid{
+  width: 150px;
+  border-radius: 50%;
+  margin:45px;
+  float: left;
+  height: 235px;
+  
+}
+.dogimage{
+  width:200px;
+  height:235px;
+  border-radius: 50%;
+}
+
+.col-md-10{
+  margin-left: 300px;
+  width: 80%;
+  margin-top: -3950px ; 
+
+  
+}
+.col-md-10 img{
+  width: 100%;
+  padding-bottom: 10%;
+  background-size: cover;
+}
+
+
+.label{
+    color: darkblue;
+    font-size: 20px;
+}
+
+.asidephoto{
+   width:40px;
+  height:25px;
+  border-radius: 50%;
+}
+.dogimage:hover {
+  transform: scale(1.5); 
+}
+.title{
+  color: aliceblue;
+}
+
+</style>
