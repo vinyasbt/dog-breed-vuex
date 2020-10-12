@@ -12,7 +12,7 @@
     </ul>
     
     </div>
-    <table class="col-md-10">
+    <table class="photo">
       <div v-if="subBreed.length>0">
            <br /> <label class="label">please select sub breed of {{dogName}}</label>
             <select v-model="subBreedName">
@@ -101,7 +101,7 @@ export default {
   border-radius: 50%;
 }
 
-.col-md-10{
+.photo{
   margin-left: 300px;
   width: 80%;
   margin-top: -3950px ; 
