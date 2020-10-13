@@ -12,6 +12,7 @@
     </ul>
     
     </div>
+    <Footer />
     <table class="photo">
       <div v-if="subBreed.length>0">
            <br /> <label class="label">please select sub breed of {{dogName}}</label>
@@ -25,7 +26,7 @@
         
       </tr>
     </table>
-    <Footer />
+    
   </div>
 </template>
 
