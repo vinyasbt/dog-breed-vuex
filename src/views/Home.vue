@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import Search from "../views/Search.vue";
+import Search from "../components/Search.vue";
 import Header from "../components/Header.vue"
 import Footer from "../components/Footer.vue"
 export default {

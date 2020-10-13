@@ -1,12 +1,10 @@
 import { shallowMount } from "@vue/test-utils";
-import HelloWorld from "@/components/HelloWorld.vue";
+import Header from "@/components/Header.vue";
 
-describe("HelloWorld.vue", () => {
-  it("renders props.msg when passed", () => {
-    const msg = "new message";
-    const wrapper = shallowMount(HelloWorld, {
-      propsData: { msg }
-    });
-    expect(wrapper.text()).toMatch(msg);
+describe("Header.vue", () => {
+  it("check h2 is present or not", () => {
+    
+    const wrapper = shallowMount(Header);
+    expect(wrapper.find("h2").exists()).toBe(true)
   });
 });
