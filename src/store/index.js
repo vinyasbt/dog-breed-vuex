@@ -1,7 +1,9 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import { getAllDogsList, getDogRandomImage, getHomeDogRandomImage } from '../api.service.js'
+
 Vue.use(Vuex);
+
 export default new Vuex.Store({
   state: {
     homeDogImages: [],
@@ -20,7 +22,6 @@ export default new Vuex.Store({
     },
     Set_DogObject(state, dogObject) {
       state.dogobject = dogObject;
-
     },
     Set_DogRandomImage(state, dogImage) {
       state.dogRandomImage.push(dogImage);

@@ -33,12 +33,12 @@ export default {
       dogSubBreedName: this.$route.params.subbreedname,
       dogAllImageArray: [],
       dogImage: [],
-      index: 0
+      index: 0,
     };
   },
   methods: {
     getDogRandomImage() {
-      getAllDogImage(this.dogName, this.dogSubBreedName).then(res => {
+      getAllDogImage(this.dogName, this.dogSubBreedName).then((res) => {
         this.dogAllImageArray = res.data.message;
         this.dogImage = [...this.dogImage, ...this.dogAllImageArray];
         this.index += 18;
@@ -50,11 +50,11 @@ export default {
     },
     goHome() {
       this.$router.push("/");
-    }
+    },
   },
   created() {
     this.getDogRandomImage();
-  }
+  },
 };
 </script>
 <style scoped>

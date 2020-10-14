@@ -54,7 +54,7 @@ export default {
     return {
       subBreed: [],
       subBreedName: "",
-      dogName: ""
+      dogName: "",
     };
   },
   created() {
@@ -64,7 +64,7 @@ export default {
   components: {
     Search,
     Header,
-    Footer
+    Footer,
   },
   methods: {
     dogInfo(data) {
@@ -74,16 +74,16 @@ export default {
       } else {
         this.$router.push({ name: "About", params: { name: data } });
       }
-    }
+    },
   },
   watch: {
     subBreedName() {
       this.$router.push({
         name: "About",
-        params: { name: this.dogName, subbreedname: this.subBreedName }
+        params: { name: this.dogName, subbreedname: this.subBreedName },
       });
-    }
-  }
+    },
+  },
 };
 </script>
 <style scoped>
