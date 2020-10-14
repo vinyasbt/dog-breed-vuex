@@ -1,20 +1,23 @@
-# dog-breed
-Dog Breed is an online collection of dog breeds.
+# Dog Breed application by Vue JS
+Dog Breed application is a single page web application which allows the user to browse different dog breeds. It is using open source api:[a link] https://dog.ceo/dog-api/. On Dashboard it loads random images of dogs and list of dogs and you can search any dog and there sub breeds. If user selects any dog then it loads all the random images of the dog of that breed.
 
-## Project Dependency
-* VueJS
-* Vuex
-* Vue Router
-* Axios
-* Bootstrap-Vue
+## Installation of Node JS
+* You need to install Node.js in this url: https://nodejs.org/en/download/
+* You can check node version with the command node-v
 
-## Why VueJS
-* Very less in size and easy to learn.
-* It is Reactive because of fast virtual DOM.
-* Developers can easily understand and build interactive web interfaces in a matter of time.
-* Highly scalable – good for small to large applications.
-* Well documented – Documentation is easy to understand
-* Better community support.
+## Installation of Vue/cli
+```
+* You should have Node.js before installing Vue/cli
+* You can install Vue/cli with the command
+npm install -g @vue/cli
+```
+* You can check vue/cli version with the command vue --version
+
+## Project dependencies
+* Axios: Promise based HTTP client for the browser. Please refer  url for more details: https://www.npmjs.com/package/axios
+* Bootstrap-Vue: With BootstrapVue we can build responsive, mobile-first projects on the web using Vue.js and the world's most popular front-end CSS library. Please refer url for more details:https://bootstrap-vue.org/
+* @vue/cli-plugin-unit-jest: Run unit tests with Jest. Jest as a JS unit testing framework and runner. Please refer below url for more details: https://jestjs.io/
+
 
 ## Project setup
 ```
@@ -40,6 +43,13 @@ npm run test:unit
 ```
 npm run lint
 ```
+
+## Project Guidelines
+* Method Naming Convention, variable declaration : camelCase 
+* Folder Naming Convention : kabab-case
+* Components Naming Convention : PascalCase
+* Vuex Standards: Mutations: PascalCase, Actions : camelCase
+                  
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
