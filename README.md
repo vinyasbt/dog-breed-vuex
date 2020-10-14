@@ -1,16 +1,16 @@
 # Dog Breed application by Vue JS
-Dog Breed application is a single page web application which allows the user to browse different dog breeds. It is using open source api:[a link] https://dog.ceo/dog-api/. On Dashboard it loads random images of dogs and list of dogs and you can search any dog and there sub breeds. If user selects any dog then it loads all the random images of the dog of that breed.
+Dog Breed application is a single page web application which allows the user to browse different dog breeds. It is using open source api: https://dog.ceo/dog-api/. On Dashboard it loads random images of dogs and list of dogs and you can search any dog and there sub breeds. If user selects any dog then it loads all the random images of the dog of that breed.
 
 ## Installation of Node JS
 * You need to install Node.js in this url: https://nodejs.org/en/download/
 * You can check node version with the command node-v
 
 ## Installation of Vue/cli
-```
+
 * You should have Node.js before installing Vue/cli
 * You can install Vue/cli with the command
 npm install -g @vue/cli
-```
+
 * You can check vue/cli version with the command vue --version
 
 ## Project dependencies
