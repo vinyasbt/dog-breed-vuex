@@ -2,31 +2,33 @@
   <div >
     <Header />
     <Search  />
-    <div class="aside">
-      <h2 class="title"><i>Dog Breeds</i></h2>
-    <ul v-for="(dog,index) in $store.state.dogsList" :key="index">
-      <a href="" @click.prevent="dogInfo(dog)">{{dog}}
-        <img :src="$store.state.dogRandomImage[index]" class="asidephoto" />
-      </a>
-      
-    </ul>
-    
+      <div class="row">
+         <div class="col-3 sm">
+             <div class="aside">
+                 <h2 class="title"><i>Dog Breeds</i></h2>
+                    <ul v-for="(dog,index) in $store.state.dogsList" :key="index">
+                        <a href="" @click.prevent="dogInfo(dog)" class="dogname">{{dog}}
+                        <img :src="$store.state.dogRandomImage[index]" class="asidephoto" />
+                        </a>  
+                    </ul>
+             </div>
+          </div>
+      <div class="col-9 sm">
+        <table class="photo">
+            <div v-if="subBreed.length>0">
+            <br />
+            <label class="label">please select sub breed of {{dogName}}</label>
+            <select v-model="subBreedName">
+                 <option v-for="(subdog,index) in subBreed" :key="index">{{subdog}}</option>
+            </select>
+             </div>
+                <tr v-for="(image,index) in $store.state.homeDogImages" :key="index" class="grid">
+                  <img :src="image" class="dogimage"/>
+                 </tr>
+         </table>
+      </div>
     </div>
     <Footer />
-    <table class="photo">
-      <div v-if="subBreed.length>0">
-           <br /> <label class="label">please select sub breed of {{dogName}}</label>
-            <select v-model="subBreedName">
-            <option v-for="(subdog,index) in subBreed" :key="index">{{subdog}}</option>
-        </select>
-        </div>
-      <tr v-for="(image,index) in $store.state.homeDogImages" :key="index" class="grid">
-        
-        <img :src="image" class="dogimage"/>
-        
-      </tr>
-    </table>
-    
   </div>
 </template>
 
@@ -81,13 +83,11 @@ export default {
 
 
 .aside{
-  margin-left: 10px;
-  width: 20%;
+  margin-right: auto;
+  /* width: 50%; */
   background-color:black
 }
-.list{
-  width: 25%
-}
+
 .grid{
   width: 150px;
   border-radius: 50%;
@@ -101,20 +101,6 @@ export default {
   height:235px;
   border-radius: 50%;
 }
-
-.photo{
-  margin-left: 300px;
-  width: 80%;
-  margin-top: -3950px ; 
-
-  
-}
-.col-md-10 img{
-  width: 100%;
-  padding-bottom: 10%;
-  background-size: cover;
-}
-
 
 .label{
     color: darkblue;
@@ -131,6 +117,9 @@ export default {
 }
 .title{
   color: aliceblue;
+}
+.dogname{
+  margin-left: -40px;
 }
 
 </style>

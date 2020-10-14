@@ -2,20 +2,22 @@
   <div class="about">
     
     <table>
-      <h2 class="label"><i>All Images of {{dogName}} {{dogSubBreedName}}</i></h2>
-      <tr v-for="(dog,index) in dogImage" :key="index" class="grid">
-        <img :src="dog" class="dogimage"/>
-      </tr>
+        <h2 class="label"><i>All Images of {{dogName}} {{dogSubBreedName}}</i></h2>
+            <div class="col-md-12">
+                <tr v-for="(dog,index) in dogImage" :key="index" class="grid">
+                    <img :src="dog" class="dogimage"/>
+                </tr>
+            </div>
     </table>
-  <span v-if="dogImage.length>=18">
-  <button class="btn btn-primary" @click="getDogRandomImage()">Show More</button>
-  </span>
-  <span>
-    <button class="btn btn-secondary" @click="goHome()">Home</button>
-  </span>
-  <span v-if="dogImage.length>=36">
-    <button class="btn btn-primary" @click="showLess()">Show Less</button>
-  </span>
+   <span v-if="dogImage.length>=18">
+      <button class="btn btn-primary" @click="getDogRandomImage()">Show More</button>
+   </span>
+    <span>
+      <button class="btn btn-secondary" @click="goHome()">Home</button>
+    </span>
+      <span v-if="dogImage.length>=36">
+         <button class="btn btn-primary" @click="showLess()">Show Less</button>
+       </span>
   </div>
 </template>
 <script>
@@ -34,10 +36,9 @@ export default {
   methods:{
    getDogRandomImage(){
      getAllDogImage(this.dogName,this.dogSubBreedName).then(res=>{
-  this.dogAllImageArray=res.data.message;
-  this.dogImage=[...this.dogImage,...this.dogAllImageArray];
-  
-  this.index+=18;
+     this.dogAllImageArray=res.data.message;
+     this.dogImage=[...this.dogImage,...this.dogAllImageArray];
+     this.index+=18;
 })
    },
    showLess(){
@@ -64,8 +65,7 @@ this.getDogRandomImage();
   border:1px solid #f1f1f1;
   margin:50px;
   float: left;
-  height: 350px;
-  
+  height: 350px; 
 }
 .dogimage{
   width:300px;
@@ -74,12 +74,10 @@ this.getDogRandomImage();
   border:5px solid #c4f37a;
 }
 .about{
-  background-color: black;
-  
+  background-color: black; 
 }
 .label{
     color: lightcyan 
-    /* margin-top: -50px; */
 }
 .grid:hover {
   transform: scale(1.5); 

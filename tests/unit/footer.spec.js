@@ -7,4 +7,8 @@ describe("Footer.vue", () => {
     const wrapper = shallowMount(Footer);
     expect(wrapper.find("h5").exists()).toBe(true)
   });
+  it("checks whether it is a vue instance",()=>{
+    const wrapper = shallowMount(Footer);
+    expect(wrapper.isVueInstance()).toBeTruthy();
+  })
 });
