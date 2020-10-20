@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="home">
     <Header />
     <Search />
     <div class="row">
@@ -69,6 +69,7 @@ export default {
   methods: {
     dogInfo(data) {
       this.dogName = data;
+      console.log("dogname",this.dogName)
       if (this.$store.state.dogobject[data].length > 0) {
         this.subBreed = this.$store.state.dogobject[data];
       } else {

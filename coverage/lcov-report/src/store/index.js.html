@@ -22,9 +22,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">4.17% </span>
+                <span class="strong">4.55% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1/24</span>
+                <span class='fraction'>1/22</span>
             </div>
         
             
@@ -43,9 +43,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">4.17% </span>
+                <span class="strong">4.55% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1/24</span>
+                <span class='fraction'>1/22</span>
             </div>
         
             
@@ -124,18 +124,7 @@
 <a name='L66'></a><a href='#L66'>66</a>
 <a name='L67'></a><a href='#L67'>67</a>
 <a name='L68'></a><a href='#L68'>68</a>
-<a name='L69'></a><a href='#L69'>69</a>
-<a name='L70'></a><a href='#L70'>70</a>
-<a name='L71'></a><a href='#L71'>71</a>
-<a name='L72'></a><a href='#L72'>72</a>
-<a name='L73'></a><a href='#L73'>73</a>
-<a name='L74'></a><a href='#L74'>74</a>
-<a name='L75'></a><a href='#L75'>75</a>
-<a name='L76'></a><a href='#L76'>76</a>
-<a name='L77'></a><a href='#L77'>77</a>
-<a name='L78'></a><a href='#L78'>78</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L69'></a><a href='#L69'>69</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -161,15 +150,12 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -191,7 +177,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -201,10 +186,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -212,78 +194,69 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import Vue from "vue";
 import Vuex from "vuex";
-import axios from 'axios';
+import { getAllDogsList, getDogRandomImage, getHomeDogRandomImage } from '../api.service.js'
 &nbsp;
-&nbsp;
-&nbsp;
-Vue.use(Vuex,axios);
+Vue.use(Vuex);
 &nbsp;
 export default new Vuex.Store({
   state: {
-    homeDogImages:[],
-    dogsList:[],
-    dogobject:{},
-    dogRandomImage:[],
-    subBreedName:'',
-     dogName:'',
+    homeDogImages: [],
+    dogsList: [],
+    dogobject: {},
+    dogRandomImage: [],
+    subBreedName: '',
+    dogName: '',
   },
   mutations: {
-<span class="fstat-no" title="function not covered" >    SE</span>T_HomeDogImages(state,randomHomeImageArray){
-<span class="cstat-no" title="statement not covered" >      state.homeDogImages=randomHomeImageArray;</span>
+<span class="fstat-no" title="function not covered" >    Se</span>t_HomeDogImages(state, randomHomeImageArray) {
+<span class="cstat-no" title="statement not covered" >      state.homeDogImages = randomHomeImageArray;</span>
     },
-<span class="fstat-no" title="function not covered" >    SE</span>T_DogsList(state,dogNameArray){
-<span class="cstat-no" title="statement not covered" >      state.dogsList=dogNameArray;</span>
+<span class="fstat-no" title="function not covered" >    Se</span>t_DogsList(state, dogNameArray) {
+<span class="cstat-no" title="statement not covered" >      state.dogsList = dogNameArray;</span>
     },
-<span class="fstat-no" title="function not covered" >    SE</span>T_DogObject(state,dogObject){
-<span class="cstat-no" title="statement not covered" >      state.dogobject=dogObject;</span>
-      
+<span class="fstat-no" title="function not covered" >    Se</span>t_DogObject(state, dogObject) {
+<span class="cstat-no" title="statement not covered" >      state.dogobject = dogObject;</span>
     },
-<span class="fstat-no" title="function not covered" >    SE</span>T_DogRandomImage(state,dogImage){
+<span class="fstat-no" title="function not covered" >    Se</span>t_DogRandomImage(state, dogImage) {
 <span class="cstat-no" title="statement not covered" >      state.dogRandomImage.push(dogImage);</span>
     },
-<span class="fstat-no" title="function not covered" >    SE</span>T_DogName(state,dogName){
-<span class="cstat-no" title="statement not covered" >      console.log("inside store dog name",dogName)</span>
-<span class="cstat-no" title="statement not covered" >      state.dogName=dogName;</span>
+<span class="fstat-no" title="function not covered" >    Se</span>t_DogName(state, dogName) {
+<span class="cstat-no" title="statement not covered" >      state.dogName = dogName;</span>
     },
-<span class="fstat-no" title="function not covered" >    SE</span>T_SubBreedName(state,subBreed){
-<span class="cstat-no" title="statement not covered" >      console.log("inside store dog subbreed name",subBreed)</span>
-<span class="cstat-no" title="statement not covered" >      state.subBreedName=subBreed;</span>
+<span class="fstat-no" title="function not covered" >    Se</span>t_SubBreedName(state, subBreed) {
+<span class="cstat-no" title="statement not covered" >      state.subBreedName = subBreed;</span>
     }
   },
   actions: {
-<span class="fstat-no" title="function not covered" >    ge</span>tHomeDogRandomImage({commit}){
-<span class="cstat-no" title="statement not covered" >      axios.get(`https://dog.ceo/api/breeds/image/random/48`).then(<span class="fstat-no" title="function not covered" >(r</span>esult)=&gt;{</span>
-        let randomHomeImageArray=<span class="cstat-no" title="statement not covered" >result.data.message;</span>
-<span class="cstat-no" title="statement not covered" >        commit('SET_HomeDogImages',randomHomeImageArray)</span>
+<span class="fstat-no" title="function not covered" >    as</span>ync getHomeDogRandomImage({ commit }) {
+<span class="cstat-no" title="statement not covered" >      await getHomeDogRandomImage().then(<span class="fstat-no" title="function not covered" >(r</span>esult) =&gt; {</span>
+        let randomHomeImageArray = <span class="cstat-no" title="statement not covered" >result.data.message;</span>
+<span class="cstat-no" title="statement not covered" >        commit('Set_HomeDogImages', randomHomeImageArray)</span>
       })
-      .catch(<span class="fstat-no" title="function not covered" >er</span>ror=&gt;{
-<span class="cstat-no" title="statement not covered" >        console.log(error);</span>
-      })
-    },
-<span class="fstat-no" title="function not covered" >    ge</span>tAllDogsList({commit}){
-<span class="cstat-no" title="statement not covered" >      axios.get('https://dog.ceo/api/breeds/list/all').then(<span class="fstat-no" title="function not covered" >(r</span>esult)=&gt;{</span>
-        let dogNameArray=<span class="cstat-no" title="statement not covered" >Object.keys(result.data.message);</span>
-<span class="cstat-no" title="statement not covered" >        commit('SET_DogsList',dogNameArray)</span>
-        let dogObject=<span class="cstat-no" title="statement not covered" >result.data.message;</span>
-<span class="cstat-no" title="statement not covered" >        commit('SET_DogObject',dogObject)</span>
-<span class="cstat-no" title="statement not covered" >        this.state.dogsList.map(<span class="fstat-no" title="function not covered" >(d</span>ogname)=&gt;{</span>
-<span class="cstat-no" title="statement not covered" >          axios.get(`https://dog.ceo/api/breed/${dogname}/images/random`).then(<span class="fstat-no" title="function not covered" >(r</span>esult)=&gt;{</span>
-          
-         let dogImage=<span class="cstat-no" title="statement not covered" >result.data.message;</span>
-<span class="cstat-no" title="statement not covered" >          commit('SET_DogRandomImage',dogImage)</span>
-          })
-          .catch(<span class="fstat-no" title="function not covered" >er</span>ror=&gt;{
-<span class="cstat-no" title="statement not covered" >            console.log(error);</span>
-          })
-          
+        .catch(<span class="fstat-no" title="function not covered" >er</span>ror =&gt; {
+<span class="cstat-no" title="statement not covered" >          console.log(error);</span>
         })
-        
+    },
+<span class="fstat-no" title="function not covered" >    as</span>ync getAllDogsList({ commit }) {
+<span class="cstat-no" title="statement not covered" >      await getAllDogsList().then(<span class="fstat-no" title="function not covered" >(r</span>esult) =&gt; {</span>
+        let dogNameArray = <span class="cstat-no" title="statement not covered" >Object.keys(result.data.message);</span>
+<span class="cstat-no" title="statement not covered" >        commit('Set_DogsList', dogNameArray)</span>
+        let dogObject = <span class="cstat-no" title="statement not covered" >result.data.message;</span>
+<span class="cstat-no" title="statement not covered" >        commit('Set_DogObject', dogObject)</span>
+<span class="cstat-no" title="statement not covered" >        this.state.dogsList.map(<span class="fstat-no" title="function not covered" >(d</span>ogname) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >          getDogRandomImage(dogname).then(<span class="fstat-no" title="function not covered" >(r</span>esult) =&gt; {</span>
+            let dogImage = <span class="cstat-no" title="statement not covered" >result.data.message;</span>
+<span class="cstat-no" title="statement not covered" >            commit('Set_DogRandomImage', dogImage)</span>
+          })
+            .catch(<span class="fstat-no" title="function not covered" >er</span>ror =&gt; {
+<span class="cstat-no" title="statement not covered" >              console.log(error);</span>
+            })
+        })
       })
-      .catch(<span class="fstat-no" title="function not covered" >er</span>ror=&gt;{
-<span class="cstat-no" title="statement not covered" >        console.log(error);</span>
-      })
+        .catch(<span class="fstat-no" title="function not covered" >er</span>ror =&gt; {
+<span class="cstat-no" title="statement not covered" >          console.log(error);</span>
+        })
     }
-     
   },
   modules: {}
 });
@@ -294,7 +267,7 @@ export default new Vuex.Store({
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Oct 14 2020 14:33:52 GMT+0530 (India Standard Time)
+                at Tue Oct 20 2020 13:02:30 GMT+0530 (India Standard Time)
             </div>
         </div>
         <script src="..\..\prettify.js"></script>

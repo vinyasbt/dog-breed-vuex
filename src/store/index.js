@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import { getAllDogsList, getDogRandomImage, getHomeDogRandomImage } from '../api.service.js'
+import { getAllDogsList, getDogRandomImage, getHomeDogRandomImage } from '../service/api.service.js'
 
 Vue.use(Vuex);
 

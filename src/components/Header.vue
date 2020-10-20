@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="header">
     <h2>
       Welcome to <strong><i> PUP STORE</i></strong>
     </h2>
