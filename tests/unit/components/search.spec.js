@@ -17,7 +17,14 @@ describe("Search.vue", () => {
     mockStore = {
       state: {
         dogsList: [],
-        dogobject: {},
+        dogobject: { "bulldog": [
+          "boston",
+          "english",
+          "french"
+        ],
+        "african": [
+  
+        ],},
       },
       dispatch: jest.fn(),
     };
@@ -46,18 +53,19 @@ it('it should have a div element with class=search', () => {
   expect(wrapper.attributes("class")).toBe("search");
 });
   
-  // it("checks watcher called routes", () => {
-  //   wrapper.setData({ searchData: 'bulldog' })
-  //   wrapper.vm.$options.watch.searchData.call();
-  //   expect(wrapper.vm.subBreed).toStrictEqual([]);
-  // });
-// it("checks dropdown will trigger or not", () => {
-//     expect(wrapper.vm.searchData).toBe('');
-//     let searchInput = wrapper.find("select");
-//     searchInput.trigger('change');
-//     expect(wrapper.vm.searchData).not.toBe('');
-//   })
+  it("checks watcher subbreed condition to true", () => {
+    wrapper.setData({ searchData: 'bulldog' })
+    wrapper.vm.$options.watch.searchData.call(wrapper.vm);
+    expect(wrapper.vm.subBreed.length).not.toBe(0);
+    wrapper.vm.$options.watch.subBreedName.call(wrapper.vm);
+    expect(wrapper.vm.$route.path).toBe("/")
+  });
 
+  it("checks watcher subbreed condition to false", () => {
+    wrapper.setData({ searchData: 'african' })
+    wrapper.vm.$options.watch.searchData.call(wrapper.vm);
+    expect(wrapper.vm.subBreed.length).toBe(0);
+  });
   
 });
 

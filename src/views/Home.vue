@@ -68,10 +68,11 @@ export default {
   },
   methods: {
     dogInfo(data) {
+      console.log(data)
       this.dogName = data;
-      console.log("dogname",this.dogName)
-      if (this.$store.state.dogobject[data].length > 0) {
-        this.subBreed = this.$store.state.dogobject[data];
+      
+      if (this.$store.state.dogobject[ this.dogName].length > 0) {
+        this.subBreed = this.$store.state.dogobject[ this.dogName];
       } else {
         this.$router.push({ name: "About", params: { name: data } });
       }

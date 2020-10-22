@@ -2,7 +2,11 @@
   <div class="search">
     <label class="label">Search Breed</label>
     <select v-model="searchData" id="dogs">
-      <option v-for="(dog, index) in $store.state.dogsList" :key="index" :value="dog">
+      <option
+        v-for="(dog, index) in $store.state.dogsList"
+        :key="index"
+        :value="dog"
+      >
         {{ dog }}
       </option>
     </select>
@@ -29,7 +33,7 @@ export default {
   },
   watch: {
     searchData() {
-      console.log(this.searchData)
+      console.log(this.searchData);
       if (this.$store.state.dogobject[this.searchData].length > 0) {
         this.subBreed = this.$store.state.dogobject[this.searchData];
       } else {
@@ -37,12 +41,10 @@ export default {
       }
     },
     subBreedName() {
-      if (this.subBreed.length > 0) {
         this.$router.push({
           name: "About",
           params: { name: this.searchData, subbreedname: this.subBreedName },
         });
-      }
     },
   },
 };

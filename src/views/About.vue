@@ -1,9 +1,7 @@
 <template>
   <div class="about">
     <table>
-      <h2 class="label">
-        All Images of {{ dogName }} {{ dogSubBreedName }}
-      </h2>
+      <h2 class="label">All Images of {{ dogName }} {{ dogSubBreedName }}</h2>
       <div class="col-md-12">
         <tr v-for="(dog, index) in dogAllImageArray" :key="index" class="grid">
           <img :src="dog" class="dogimage" />
@@ -23,7 +21,7 @@ export default {
     return {
       dogName: this.$route.params.name,
       dogSubBreedName: this.$route.params.subbreedname,
-      dogAllImageArray: []
+      dogAllImageArray: [],
     };
   },
   methods: {
@@ -33,8 +31,8 @@ export default {
   },
   created() {
     getAllDogImage(this.dogName, this.dogSubBreedName).then((res) => {
-        this.dogAllImageArray = res.data.message;
-      });
+      this.dogAllImageArray = res.data.message;
+    });
   },
 };
 </script>

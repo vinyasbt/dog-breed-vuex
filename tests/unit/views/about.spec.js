@@ -1,8 +1,6 @@
 import { shallowMount, createLocalVue } from '@vue/test-utils';
 import about from "@/views/About.vue"
 import VueRouter from 'vue-router';
-// import { getAllDogImage } from "../../src/api.service.js";
-import sinon from 'sinon'
 describe("about.vue", () => {
     let wrapper;
     const router = new VueRouter();
@@ -34,7 +32,7 @@ describe("about.vue", () => {
             goHome:goHome,
         })
         wrapper.find('button').trigger('click');
-        expect(goHome).toHaveBeenCalled();
+        expect(wrapper.vm.goHome).toHaveBeenCalled();
         expect(wrapper.vm.$route.path).toBe("/")
     });
     it('checks component',()=>{
@@ -44,15 +42,6 @@ describe("about.vue", () => {
       expect(wrapper.vm.getDogRandomImage).toBeCalled();
     })
     
-    // it('calls method in created',()=>{
-    //   const getAllDogImageSpy=sinon.spy()
-    //   wrapper.setMethods({
-    //     getAllDogImage:getAllDogImageSpy,
-    // })
-    // wrapper.setData({
-    //   dogName:'bulldog',
-    //   dogSubBreedName:'english'
-    // })
-    //   expect(getAllDogImageSpy.called).toBe(true);
-    // })
+    
+    
 })

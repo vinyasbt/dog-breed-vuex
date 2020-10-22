@@ -14,10 +14,10 @@ describe("Header.vue", () => {
   it("renders the correct markup", () => {
     const wrapper = shallowMount(Header);
     expect(wrapper.html()).toContain('<div id="header">');
-});
-it('it should have a div element with id="header"', () => {
-  const wrapper = shallowMount(Header);
-  expect(wrapper.attributes("id")).toBe("header");
-});
+  });
+  it('it should have a div element with id="header"', () => {
+    const wrapper = shallowMount(Header);
+    expect(wrapper.attributes("id")).toBe("header");
+  });
 
 });
