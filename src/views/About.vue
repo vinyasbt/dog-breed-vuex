@@ -9,7 +9,9 @@
       </div>
     </table>
     <span>
-      <button class="btn btn-secondary" @click="goHome()">Home</button>
+     <button id="goHome" class="btn btn-primary btn-lg" @click="goHome()">
+        Home
+      </button>
     </span>
   </div>
 </template>

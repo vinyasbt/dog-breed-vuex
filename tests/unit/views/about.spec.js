@@ -33,7 +33,7 @@ describe("about.vue", () => {
         })
         wrapper.find('button').trigger('click');
         expect(wrapper.vm.goHome).toHaveBeenCalled();
-        expect(wrapper.vm.$route.path).toBe("/")
+        
     });
     it('checks component',()=>{
       wrapper.vm.getDogRandomImage=jest.fn()
@@ -41,7 +41,12 @@ describe("about.vue", () => {
       wrapper.vm.getDogRandomImage();
       expect(wrapper.vm.getDogRandomImage).toBeCalled();
     })
-    
+    it('has routes to home page',async ()=>{
+      const button = wrapper.find('#goHome');
+      await button.trigger('click');
+      expect(wrapper.vm.$route.path).toBe("/");
+  
+    })
     
     
 })

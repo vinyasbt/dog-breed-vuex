@@ -32,7 +32,7 @@ const mutations={
 }
 const actions= {
    getHomeDogRandomImage({ commit }) {
-     return getHomeDogRandomImages().then((result) => {
+      getHomeDogRandomImages().then((result) => {
       commit('Set_HomeDogImages', result.data.message)
     })
       .catch(error => {

@@ -5,10 +5,9 @@ module.exports = {
     '**/*.{js,vue}',
     '!**/node_modules/**',
     '!**/*.config.js',
-    '!**/vendor/**',
-    '!**/tests/e2e/**',
     '!**/main.js',
     '!**/coverage/**',
+    
   ],
   coverageThreshold: {
     global: {
@@ -18,7 +17,4 @@ module.exports = {
       statements: -10,
     },
   },
-  // moduleNameMApper: {
-  //   '^@/(.*)$': '<rootDir>/src/$1',
-  // },
 };
