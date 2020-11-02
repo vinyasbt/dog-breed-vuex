@@ -1,12 +1,19 @@
 <template>
   <div class="about">
-    <b-container >
-          <h2 class="label">All Images of {{ dogName }} {{ dogSubBreedName }}</h2>
-           <b-row>
-           <b-col md="4" lg="3" sm="4" v-for="(dog, index) in dogAllImageArray" :key="index" class="grid"  >
-              <img :src="dog" class="dogimage" />
-           </b-col>
-           </b-row>
+    <b-container>
+      <h2 class="label">All Images of {{ dogName }} {{ dogSubBreedName }}</h2>
+      <b-row>
+        <b-col
+          md="4"
+          lg="3"
+          sm="4"
+          v-for="(dog, index) in dogAllImageArray"
+          :key="index"
+          class="grid"
+        >
+          <img :src="dog" class="dogimage" />
+        </b-col>
+      </b-row>
     </b-container>
     <span>
       <button id="goHome" class="btn btn-primary btn-lg" @click="goHome()">
@@ -32,9 +39,15 @@ export default {
     },
   },
   created() {
-    getAllDogImage(this.dogName, this.dogSubBreedName).then((res) => {
-      this.dogAllImageArray = res.data.message;
-    });
+    getAllDogImage(this.dogName, this.dogSubBreedName)
+      .then((res) => {
+        this.dogAllImageArray = res.data.message;
+        console.log(res.data.message);
+      })
+      .catch((res) => {
+        console.log(res);
+        this.$router.push({ name: "PageNotFound" });
+      });
   },
 };
 </script>
@@ -49,7 +62,7 @@ export default {
   height: 80%;
   border-radius: 50%;
   border: 5px solid #c4f37a;
-  object-fit: cover
+  /* object-fit: cover; */
 }
 .about {
   background-color: black;
