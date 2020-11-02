@@ -8,10 +8,8 @@ import search from "@/components/Search.vue";
 
 describe("about.vue", () => {
   let wrapper;
-
   let mockStore;
   const router = new VueRouter();
-
   beforeEach(() => {
     const localVue = createLocalVue();
     localVue.use(Vuex);
@@ -27,7 +25,6 @@ describe("about.vue", () => {
             "french"
           ],
           "african": [
-
           ],
         },
         dogRandomImage: []
@@ -64,7 +61,6 @@ describe("about.vue", () => {
   it("it should load the search", () => {
     expect(search).toBeTruthy();
   });
-
   it("it should have a <footer-stub></footer-stub>", () => {
     expect(wrapper.html()).toContain("<footer-stub></footer-stub>");
   });
@@ -74,12 +70,6 @@ describe("about.vue", () => {
   it("it should have a <search-stub></search-stub>", () => {
     expect(wrapper.html()).toContain("<search-stub></search-stub>");
   });
-  // it('calling sub breed watcher', () => {
-  //   wrapper.setData({ subBreedName: "english" })
-  //   wrapper.vm.$options.watch.subBreedName.call(wrapper.vm);
-  //   // expect(wrapper.vm.$route.path).toBe("/");
-  //   expect(wrapper.vm.subBreedName).toBe("english");
-  // })
   it('link exists', () => {
     const dogInfo = jest.fn();
     wrapper.setMethods({
@@ -89,15 +79,14 @@ describe("about.vue", () => {
     expect(dogInfo).toHaveBeenCalled();
   })
   it('checks method calling', () => {
-    wrapper.setData({dogName:""})
+    wrapper.setData({ dogName: "" })
     wrapper.vm.dogInfo('bulldog');
     expect(wrapper.vm.dogName).toBe('bulldog')
     expect(wrapper.vm.subBreed.length).not.toBe(0)
     wrapper.vm.$options.watch.subBreedName.call(wrapper.vm);
-    
   })
-  it('checks subbreed condition',()=>{
-    wrapper.setData({dogName:""})
+  it('checks subbreed condition', () => {
+    wrapper.setData({ dogName: "" })
     wrapper.vm.dogInfo('african');
     expect(wrapper.vm.subBreed.length).toBe(0)
   })

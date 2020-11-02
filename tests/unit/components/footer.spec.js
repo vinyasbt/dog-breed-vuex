@@ -3,7 +3,6 @@ import Footer from "@/components/Footer.vue";
 
 describe("Footer.vue", () => {
   it("check h5 is present or not", () => {
-
     const wrapper = shallowMount(Footer);
     expect(wrapper.find("h5").exists()).toBe(true)
   });
@@ -21,6 +20,6 @@ describe("Footer.vue", () => {
   });
   it("does h5 data exists", () => {
     const wrapper = shallowMount(Footer);
-    expect(wrapper.find("h5").text()).toBe("Copyrights Reserved")
+    expect(wrapper.find("h5").text()).toBe("© Copyrights Reserved")
   })
 });

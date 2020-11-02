@@ -48,7 +48,7 @@ npm run lint
 * Method Naming Convention, variable declaration : camelCase 
 * Folder Naming Convention : kabab-case
 * Components Naming Convention : PascalCase
-* Vuex Standards: Mutations: PascalCase, Actions : camelCase
+* Vuex Standards: Mutations: CAPITALCASE, Actions : camelCase
                   
 
 ### Customize configuration

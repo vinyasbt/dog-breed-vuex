@@ -1,8 +1,5 @@
-
 import { getAllDogsList, getDogRandomImage, getHomeDogRandomImages } from '../service/api.service.js'
-
-
-const state= {
+const state = {
   homeDogImages: [],
   dogsList: [],
   dogobject: {},
@@ -10,45 +7,46 @@ const state= {
   subBreedName: '',
   dogName: '',
 }
-const mutations={
-  Set_HomeDogImages(state, randomHomeImageArray) {
+const mutations = {
+  SET_HOMEDOGIMAGES(state, randomHomeImageArray) {
     state.homeDogImages = randomHomeImageArray;
   },
-  Set_DogsList(state, dogNameArray) {
+  SET_DOGSLIST(state, dogNameArray) {
     state.dogsList = dogNameArray;
   },
-  Set_DogObject(state, dogObject) {
+  SET_DOGOBJECT(state, dogObject) {
     state.dogobject = dogObject;
   },
-  Set_DogRandomImage(state, dogImage) {
+  SET_DOGRANDOMIMAGE(state, dogImage) {
     state.dogRandomImage.push(dogImage);
   },
-  Set_DogName(state, dogName) {
+  SET_DOGNAME(state, dogName) {
     state.dogName = dogName;
   },
-  Set_SubBreedName(state, subBreed) {
+  SET_SUBBREEDNAME(state, subBreed) {
     state.subBreedName = subBreed;
   }
 }
-const actions= {
-   getHomeDogRandomImage({ commit }) {
-      getHomeDogRandomImages().then((result) => {
-      commit('Set_HomeDogImages', result.data.message)
+const actions = {
+  async getHomeDogRandomImage({ commit }) {
+     getHomeDogRandomImages().then((result) => {
+      console.log("gethome dog images called",result)
+      commit('SET_HOMEDOGIMAGES', result.data.message)
     })
       .catch(error => {
         console.log(error);
       })
   },
   async getAllDogsList({ commit }) {
-    await getAllDogsList().then((result) => {
+    getAllDogsList().then((result) => {
       let dogNameArray = Object.keys(result.data.message);
-      commit('Set_DogsList', dogNameArray)
+      commit('SET_DOGSLIST', dogNameArray)
       let dogObject = result.data.message;
-      commit('Set_DogObject', dogObject)
+      commit('SET_DOGOBJECT', dogObject)
       this.state.dogsList.map((dogname) => {
         getDogRandomImage(dogname).then((result) => {
           let dogImage = result.data.message;
-          commit('Set_DogRandomImage', dogImage)
+          commit('SET_DOGRANDOMIMAGE', dogImage)
         })
           .catch(error => {
             console.log(error);

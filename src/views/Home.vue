@@ -2,24 +2,23 @@
   <div class="home">
     <Header />
     <Search />
-    <div class="row">
-      <div class="col-3 sm">
-        <div class="aside">
-          <h2 class="title"><i>Dog Breeds</i></h2>
-          <ul v-for="(dog, index) in $store.state.dogsList" :key="index">
-            <a href="" @click.prevent="dogInfo(dog)" class="dogname">
+    <b-container fluid>
+    <b-row >
+    <b-col md="2"  class="aside">
+      <h3>Dog Breed </h3>
+      <div v-for="(dog, index) in $store.state.dogsList" :key="index" >
+      <a href="" @click.prevent="dogInfo(dog)">
               {{ dog }}
+              <br />
               <img
                 :src="$store.state.dogRandomImage[index]"
                 class="asidephoto"
               />
             </a>
-          </ul>
-        </div>
       </div>
-      <div class="col-9 sm">
-        <table class="photo">
-          <div v-if="subBreed.length > 0">
+      </b-col>
+      <b-col md="10" class="dark" >
+        <div v-if="subBreed.length > 0">
             <br />
             <label class="label">
               please select sub breed of {{ dogName }}
@@ -30,16 +29,14 @@
               </option>
             </select>
           </div>
-          <tr
-            v-for="(image, index) in $store.state.homeDogImages"
+        <div v-for="(image, index) in $store.state.homeDogImages"
             :key="index"
-            class="grid"
-          >
-            <img :src="image" class="dogimage" />
-          </tr>
-        </table>
-      </div>
-    </div>
+            class="grid">
+          <img :src="image" class="dogimage" />
+        </div>
+      </b-col>
+    </b-row>
+    </b-container>
     <Footer />
   </div>
 </template>
@@ -68,11 +65,10 @@ export default {
   },
   methods: {
     dogInfo(data) {
-      console.log(data)
+      console.log(data);
       this.dogName = data;
-      
-      if (this.$store.state.dogobject[ this.dogName].length > 0) {
-        this.subBreed = this.$store.state.dogobject[ this.dogName];
+      if (this.$store.state.dogobject[this.dogName].length > 0) {
+        this.subBreed = this.$store.state.dogobject[this.dogName];
       } else {
         this.$router.push({ name: "About", params: { name: data } });
       }
@@ -90,23 +86,20 @@ export default {
 </script>
 <style scoped>
 .aside {
-  margin-right: auto;
   background-color: black;
 }
 .grid {
-  width: 150px;
   border-radius: 50%;
-  margin: 45px;
+  margin: 55px;
   float: left;
-  height: 235px;
 }
 .dogimage {
-  width: 200px;
+  width: 170px;
   height: 235px;
   border-radius: 50%;
 }
 .label {
-  color: darkblue;
+  color: lightskyblue;
   font-size: 20px;
 }
 .asidephoto {
@@ -120,7 +113,10 @@ export default {
 .title {
   color: aliceblue;
 }
-.dogname {
-  margin-left: -40px;
+.dark{
+  background-color: black;
+}
+h3{
+  color: aliceblue;
 }
 </style>

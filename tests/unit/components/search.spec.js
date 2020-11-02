@@ -6,10 +6,8 @@ import { routes } from '@/router/index';
 
 describe("Search.vue", () => {
   let wrapper;
-
   let mockStore;
   const router = new VueRouter({ routes });
-
   beforeEach(() => {
     const localVue = createLocalVue();
     localVue.use(Vuex);
@@ -17,14 +15,15 @@ describe("Search.vue", () => {
     mockStore = {
       state: {
         dogsList: [],
-        dogobject: { "bulldog": [
-          "boston",
-          "english",
-          "french"
-        ],
-        "african": [
-  
-        ],},
+        dogobject: {
+          "bulldog": [
+            "boston",
+            "english",
+            "french"
+          ],
+          "african": [
+          ],
+        },
       },
       dispatch: jest.fn(),
     };
@@ -40,7 +39,6 @@ describe("Search.vue", () => {
     wrapper.destroy();
   });
   it("checks whether it is a vue instance", () => {
-
     expect(wrapper.isVueInstance()).toBeTruthy();
   })
   it("check select is present or not", () => {
@@ -48,11 +46,10 @@ describe("Search.vue", () => {
   });
   it("renders the correct markup", () => {
     expect(wrapper.html()).toContain('<div class="search">');
-});
-it('it should have a div element with class=search', () => {
-  expect(wrapper.attributes("class")).toBe("search");
-});
-  
+  });
+  it('it should have a div element with class=search', () => {
+    expect(wrapper.attributes("class")).toBe("search");
+  });
   it("checks watcher subbreed condition to true", () => {
     wrapper.setData({ searchData: 'bulldog' })
     wrapper.vm.$options.watch.searchData.call(wrapper.vm);
@@ -60,12 +57,10 @@ it('it should have a div element with class=search', () => {
     wrapper.vm.$options.watch.subBreedName.call(wrapper.vm);
     // expect(wrapper.vm.$route.path).toBe("/")
   });
-
   it("checks watcher subbreed condition to false", () => {
     wrapper.setData({ searchData: 'african' })
     wrapper.vm.$options.watch.searchData.call(wrapper.vm);
     expect(wrapper.vm.subBreed.length).toBe(0);
   });
-  
 });
 

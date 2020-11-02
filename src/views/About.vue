@@ -1,15 +1,15 @@
 <template>
   <div class="about">
-    <table>
-      <h2 class="label">All Images of {{ dogName }} {{ dogSubBreedName }}</h2>
-      <div class="col-md-12">
-        <tr v-for="(dog, index) in dogAllImageArray" :key="index" class="grid">
-          <img :src="dog" class="dogimage" />
-        </tr>
-      </div>
-    </table>
+    <b-container >
+          <h2 class="label">All Images of {{ dogName }} {{ dogSubBreedName }}</h2>
+           <b-row>
+           <b-col md="4" lg="3" sm="4" v-for="(dog, index) in dogAllImageArray" :key="index" class="grid"  >
+              <img :src="dog" class="dogimage" />
+           </b-col>
+           </b-row>
+    </b-container>
     <span>
-     <button id="goHome" class="btn btn-primary btn-lg" @click="goHome()">
+      <button id="goHome" class="btn btn-primary btn-lg" @click="goHome()">
         Home
       </button>
     </span>
@@ -41,17 +41,15 @@ export default {
 <style scoped>
 .grid {
   width: 300px;
-  border-radius: 50%;
-  border: 1px solid #f1f1f1;
-  margin: 50px;
   float: left;
-  height: 350px;
+  height: 300px;
 }
 .dogimage {
-  width: 300px;
-  height: 350px;
+  width: 80%;
+  height: 80%;
   border-radius: 50%;
   border: 5px solid #c4f37a;
+  object-fit: cover
 }
 .about {
   background-color: black;
