@@ -15,5 +15,5 @@ export function getDogRandomImage(dogname) {
     return axios.get(`https://dog.ceo/api/breed/${dogname}/images/random`);
 }
 export function getHomeDogRandomImages() {
-    return axios.get(`https://dog.ceo/api/breeds/image/random/48`);
+    return axios.get(`https://dog.ceo/api/breeds/image/random/70`);
 }

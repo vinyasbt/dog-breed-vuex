@@ -89,13 +89,20 @@ export default {
   background-color: black;
 }
 .grid {
-  border-radius: 50%;
+  /* border-radius: 50%;
   margin: 55px;
+  float: left; */
+  width: 250px;
   float: left;
+  height: 300px;
+  margin: 10px;
 }
 .dogimage {
-  width: 170px;
+  /* width: 170px;
   height: 235px;
+  border-radius: 50%; */
+  width: 80%;
+  height: 80%;
   border-radius: 50%;
 }
 .label {
@@ -108,7 +115,7 @@ export default {
   border-radius: 50%;
 }
 .dogimage:hover {
-  transform: scale(1.5);
+  transform: scale(1.25);
 }
 .title {
   color: aliceblue;

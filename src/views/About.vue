@@ -44,8 +44,7 @@ export default {
         this.dogAllImageArray = res.data.message;
         console.log(res.data.message);
       })
-      .catch((res) => {
-        console.log(res);
+      .catch(() => {
         this.$router.push({ name: "PageNotFound" });
       });
   },
