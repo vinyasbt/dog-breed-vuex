@@ -45,6 +45,7 @@
 import Search from "../components/Search.vue";
 import Header from "../components/Header.vue";
 import Footer from "../components/Footer.vue";
+import { mapActions} from "vuex";
 export default {
   name: "Home",
   data() {
@@ -54,9 +55,11 @@ export default {
       dogName: "",
     };
   },
-  created() {
-    this.$store.dispatch("getHomeDogRandomImage");
-    this.$store.dispatch("getAllDogsList");
+  created () {
+    // this.$store.dispatch("getHomeDogRandomImage");
+    // this.$store.dispatch("getAllDogsList");
+     this.getHomeDogRandomImage();
+     this.getAllDogsList();
   },
   components: {
     Search,
@@ -64,6 +67,7 @@ export default {
     Footer,
   },
   methods: {
+    ...mapActions(['getHomeDogRandomImage','getAllDogsList']),
     dogInfo(data) {
       console.log(data);
       this.dogName = data;
